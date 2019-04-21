@@ -1,0 +1,20 @@
+(defun f(x y)
+  (if(= y 0)
+    (+ x 1)
+    (*(+ x 1 y)(f x (- y 1)))
+      )
+  )
+(defun helper(x y)
+  (+ y (f x y))
+  )
+
+(defun g(L)
+  (if (null L)
+      nil
+    (if(< (car L) 0)
+        (cons (* (car L) -2)(g(cdr L)))
+        (cons (+ (car L) 2)(g(cdr L)))
+        )
+      )
+  
+  )
